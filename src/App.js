@@ -72,9 +72,8 @@ const App = () => {
             }
         }).then((res)=>{
             if(res.status === 200){
-                setProjects((prevState)=>{
-                    return prevState.map((p)=> p.id !== id)
-                })
+                let newProjects = projects.map((p)=> p.id !== id)
+                setProjects(newProjects);
             }
         }).catch((err)=>{
             console.log(err);
